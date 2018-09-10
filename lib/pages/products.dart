@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../product_manager.dart';
+import '../product_container.dart';
 
 class ProductsPage extends StatelessWidget {
   final List<Map<String, String>> products;
@@ -24,7 +24,7 @@ class ProductsPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('EasyList'),
       ),
-      body: ProductManager(products, addProduct, deleteProduct)
+      body: ProductContainer(products, addProduct, deleteProduct)
     );
   }
 }

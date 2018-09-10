@@ -1,11 +1,10 @@
 import "package:flutter/material.dart";
-import './pages/product.dart';
 
-class Products extends StatelessWidget {
+class ProductCardBuilder extends StatelessWidget {
   final List<Map<String, String>> products;
   final Function deleteProduct;
 
-  Products(this.products, this.deleteProduct);
+  ProductCardBuilder(this.products, this.deleteProduct);
 
   Widget _buildProductItem(BuildContext context,int index) {
     return Card(
@@ -32,15 +31,15 @@ class Products extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget productCard = Container();
+    Widget productCards = Container();
 
     if(products.length > 0){
-      productCard = ListView.builder(
+      productCards = ListView.builder(
         itemBuilder: _buildProductItem,
         itemCount: products.length,
       );
     }
 
-    return productCard;
+    return productCards;
   }
 }

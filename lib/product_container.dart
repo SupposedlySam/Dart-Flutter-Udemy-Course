@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import './products.dart';
+import './product_card_builder.dart';
 import './product_control.dart';
 
-class ProductManager extends StatelessWidget {
+class ProductContainer extends StatelessWidget {
   final List<Map<String, String>> products;
   final Function addProduct;
   final Function deleteProduct;
 
-  ProductManager(this.products, this.addProduct, this.deleteProduct);
+  ProductContainer(this.products, this.addProduct, this.deleteProduct);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class ProductManager extends StatelessWidget {
         margin: EdgeInsets.all(10.0),
         child: ProductControl(addProduct),
       ),
-      Expanded(child: Products(products, deleteProduct))
+      Expanded(child: ProductCardBuilder(products, deleteProduct))
     ]);
   }
 }
