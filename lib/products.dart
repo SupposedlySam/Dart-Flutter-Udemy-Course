@@ -17,16 +17,12 @@ class Products extends StatelessWidget {
             alignment: MainAxisAlignment.center,
             children: <Widget>[FlatButton(
             child: Text('details'),
-            onPressed: () => Navigator.push<bool>(
-                context, MaterialPageRoute(
-                builder: (BuildContext context) => ProductPage(
-                  title: products[index]['title'], 
-                  imageUrl: products[index]['image'],
-                ))).then((value) {
-                  if(value == true)
-                  {
-                      deleteProduct(index);
-                  }
+            onPressed: () => Navigator.pushNamed<bool>(context, '/product/' + index.toString())
+              .then((value) {
+                if(value == true)
+                {
+                    deleteProduct(index);
+                }
               }),
           )])
         ]
