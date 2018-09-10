@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../product_manager.dart';
 
 class ProductsPage extends StatelessWidget {
   @override
@@ -7,7 +8,7 @@ class ProductsPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('EasyList'),
       ),
-      body: ProductsPage()
+      body: ProductManager()
     );
   }
 }
