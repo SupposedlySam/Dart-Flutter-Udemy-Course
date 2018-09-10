@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import './products.dart';
+import './product_create.dart';
+import './product_list.dart';
 
 class ProductAdminPage extends StatelessWidget {
   @override
@@ -30,7 +32,12 @@ class ProductAdminPage extends StatelessWidget {
             )
           ],),
         ),
-        body: Container(),
+        body: TabBarView(
+          children: <Widget>[
+            ProductCreatePage(),
+            ProductListPage()
+          ],
+        ),
       ),
     );
   }
