@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../product_manager.dart';
+import './product_admin.dart';
 
 class ProductsPage extends StatelessWidget {
   @override
@@ -7,10 +8,13 @@ class ProductsPage extends StatelessWidget {
     return Scaffold(
       drawer: Drawer(child: Column(children: <Widget>[
         AppBar(
-          title: Text("Menu"),
-          automaticallyImplyLeading: false // remove the hamburger icon from the drawer/AppBar
+          automaticallyImplyLeading: false, // remove the hamburger icon from the drawer/AppBar
+          title: Text("Menu")
         ),
-        ListTile(title: Text("Manage Products"), onTap: () => {},)
+        ListTile(
+          title: Text("Admin Page"), 
+          onTap: () { Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => ProductAdminPage(),)); } 
+        ),
       ],),),
       appBar: AppBar(
         title: Text('EasyList'),
